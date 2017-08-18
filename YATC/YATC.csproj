@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D62DA087-4724-49A3-91B5-83689F442747}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YATC</RootNamespace>
+    <AssemblyName>YATC.Base</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Grammar\tigerLexer.cs">
+      <Link>Grammar\tigerLexer.cs</Link>
+    </Compile>
+    <Compile Include="..\Grammar\tigerParser.cs">
+      <Link>Grammar\tigerParser.cs</Link>
+    </Compile>
+    <Compile Include="ASTNodes\LocalNode\DeclarationNode\FunDeclNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\DeclarationNode\DeclarationNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\DeclarationNode\FunDeclSeqNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\DeclarationNode\Node.cs" />
+    <Compile Include="ASTNodes\LocalNode\DeclarationNode\TypeDeclSeqNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\DeclarationNode\AliasDeclNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\ArrayInstNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\AccessNode\AccessNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\AccessNode\ArrayAccess.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\AccessNode\FieldAccessNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\AtomicNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\ExprSeqNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\FunCallNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\IntNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\LetNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\NilNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\VarAccessNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\StringNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\ArithmeticNode\ArithmeticNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\ArithmeticNode\DivNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\ArithmeticNode\MinusNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\ArithmeticNode\MultNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\ArithmeticNode\PlusNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\BinaryNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\LogicNode\AndNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\LogicNode\LogicNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\LogicNode\OrNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\RelationalNode\IdentityNode\EqNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\RelationalNode\IdentityNode\IdentityNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\RelationalNode\IdentityNode\NotEqNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\RelationalNode\OrderNode\GtEqNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\RelationalNode\OrderNode\GtNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\RelationalNode\OrderNode\LtEqNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\RelationalNode\OrderNode\LtNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\RelationalNode\OrderNode\OrderNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\BinaryNode\RelationalNode\RelationalNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\ExpressionNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\RecordInstNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\NegNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\LocalNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\StatementNode\AssignNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\StatementNode\BreakNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\StatementNode\EmptyNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\StatementNode\ForNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\StatementNode\IBreakebleNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\AtomicNode\IfNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\StatementNode\StatementNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\DeclarationNode\TypeDeclNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\DeclarationNode\VarDeclNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\StatementNode\WhileNode.cs" />
+    <Compile Include="ASTNodes\ProgramNode.cs" />
+    <Compile Include="Scope\Report\Item.cs" />
+    <Compile Include="Scope\Report\Report.cs" />
+    <Compile Include="Scope\TigerInfo\FunVarInfo.cs" />
+    <Compile Include="Scope\TigerType\TigerTypeHolder.cs" />
+    <Compile Include="Scope\TigerType\ArrayType.cs" />
+    <Compile Include="Scope\TigerType\RecordType.cs" />
+    <Compile Include="Scope\TigerType\TigerType.cs" />
+    <Compile Include="ASTNodes\UtilNode\FieldInstNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\DeclarationNode\ArrayDeclNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\TypeNode\FillInTypeNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\TypeNode\IdNode.cs" />
+    <Compile Include="ASTNodes\UtilNode\TypeFieldNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\DeclarationNode\RecordDeclNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\TypeNode\TypeNode.cs" />
+    <Compile Include="ASTNodes\LocalNode\ExpressionNode\TypeNode\VoidNode.cs" />
+    <Compile Include="ASTNodes\UtilNode\UnknownNode.cs" />
+    <Compile Include="ASTNodes\UtilNode\UtilNode.cs" />
+    <Compile Include="Grammar\ParsingException.cs" />
+    <Compile Include="Scope\TigerInfo\TigerInfo.cs" />
+    <Compile Include="ASTNodes\TigerNode.cs" />
+    <Compile Include="Scope\TigerInfo\TigerTypeInfo.cs" />
+    <Compile Include="Scope\TigerScope.cs" />
+    <Compile Include="Scope\TigerInfo\FunctionInfo.cs" />
+    <Compile Include="Scope\TigerInfo\VariableInfo.cs" />
+    <Compile Include="ASTNodes\TigerTreeAdaptor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Antlr3 Include="..\Grammar\tiger.g">
+      <Link>Grammar\tiger.g</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>YATC.Grammar</CustomToolNamespace>
+    </Antlr3>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
